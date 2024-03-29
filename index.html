@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-4">
@@ -30,7 +29,6 @@
         crossorigin="anonymous"></script>
 
     <script>
-
         document.addEventListener('DOMContentLoaded', function () {
             loadTodos();
             deleteTodo();
@@ -52,18 +50,20 @@
             var btn1 = document.createElement('button');
 
             item.innerText = text;
-            item.classList.add('list-group-item');
+            item.classList.add('list-group-item', 'd-flex', 'justify-content-between');
 
+            //삭제버튼
             btn1.innerText = 'x';
-            btn1.classList.add('btn1');
+            btn1.classList.add('btn1','btn','btn-danger');
             btn1.addEventListener('click', function () {
                 item.remove();
                 storeTodos();
             });
 
-            item.appendChild(btn1);
             list.appendChild(item);
+            item.appendChild(btn1);
         }
+
         //할일 목록을 저장할 함수
         function storeTodos() {
             var todos = []
